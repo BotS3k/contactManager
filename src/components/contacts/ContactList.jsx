@@ -76,10 +76,10 @@ const ContactList = () => {
           {filteredContacts.map((contact, index) => (
             <div className="col-span-1 sm:col-span-2 lg:col-span-1" key={contact.id}>
               <ReactCardFlip flipDirection="vertical" isFlipped={flippedCardIndex === index}>
-                <div className="card" onClick={() => flip(index)}>
+                <div className="card">
                   <div className="p-2">
                     <div className="flex flex-col items-center justify-center">
-                      <div className="w-32 h-32 rounded-full overflow-hidden mb-4">
+                      <div className="w-32 h-32 rounded-full overflow-hidden mb-4" onMouseEnter={() => flip(index)}>
                         <img
                           src={contact.photo}
                           alt=""
@@ -106,7 +106,7 @@ const ContactList = () => {
                     </div>
                   </div>
                 </div>
-                <div className="card card-back" onClick={() => flip(index)}>
+                <div className="card card-back h-full" onMouseLeave={() => flip(index)}>
                   <section className="mt-3">
                     <div>
                       <ul className="list-group">

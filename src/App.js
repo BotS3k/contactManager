@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
 import NavBar from "./components/contacts/NavBar";
 import ContactList from "./components/contacts/ContactList";
@@ -6,11 +6,10 @@ import AddContacts from "./components/contacts/AddContacts";
 import ViewContacts from "./components/contacts/ViewContacts";
 import EditContacts from "./components/contacts/EditContacts";
 
-
 const App = () => {
   return (
     <div>
-      <NavBar/>
+      <NavBar />
       <Routes>
         <Route path="/" element={<Navigate to="/contacts/list" />} />
         <Route path="/contacts/list" element={<ContactList />} />
